@@ -1,0 +1,35 @@
+/*Inline Function
+inline is a keyword. If a function is defined as inline then during compilation all the call statements will be replaced by function definition code. It will remove the function from our code. Now there will be no jump from function call to function definition this will result in fast execution speed of the program but it will also increase the program size.
+inline is just a request to the compiler and the compiler may cancel our request in following cases:-
+1.	If the function is too large.
+2.	If the function is too complex.
+3.	If the function contains a loop or a switch or goto or static or return or any other jump statement.
+
+Different compilers may assume different rules.
+
+If we define a function as inline even if it contains a loop or a switch then compiler will give a warning not an error "function containing loop is not expanded as inline"
+*/
+#include<iostream>
+#include<conio.h>
+using namespace std;
+inline void swap(int a,int b){	
+	int t=a;
+	a=b;
+	b=t;
+	cout<<"After swap values are "<<a<<"\t"<<b<<endl;
+}
+int main(void){	
+	int a1,b1;
+	cout<<"Enter two numbers: ";
+	cin>>a1>>b1;
+	swap(a1,b1);
+	int a2,b2;
+	cout<<"Enter two numbers: ";
+	cin>>a2>>b2;
+	swap(a2,b2);
+	int a3,b3;
+	cout<<"Enter two numbers: ";
+	cin>>a3>>b3;
+	swap(a3,b3);
+	getch();return 0;
+}
